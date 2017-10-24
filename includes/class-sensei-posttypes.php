@@ -127,7 +127,7 @@ class Sensei_PostTypes {
             'has_archive'         => $this->get_course_post_type_archive_slug(),
 		    'hierarchical'        => false,
 		    'menu_position'       => 51,
-		    'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+		    'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
 			'show_in_rest' => true,
 			'rest_base' => 'courses',
 			'rest_controller_class' => 'WP_REST_Posts_Controller',
@@ -439,6 +439,7 @@ class Sensei_PostTypes {
 			'show_ui' => true,
 			'query_var' => true,
 			'show_in_nav_menus' => true,
+			'show_in_rest' => true,
             'capabilities' => array(
                 'manage_terms' => 'manage_categories',
                 'edit_terms'   => 'edit_courses',
@@ -783,7 +784,7 @@ class Sensei_PostTypes {
 
 	/**
 	 * Adds a 'Edit Quiz' link to the admin bar when viewing a Quiz linked to a corresponding Lesson
-	 * 
+	 *
 	 * @since  1.7.0
      * @param WP_Admin_Bar $bar
 	 * @return void
